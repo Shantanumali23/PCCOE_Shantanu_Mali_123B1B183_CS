@@ -1,0 +1,5 @@
+[tc02_buffer_overflow.cpp:8]: (error) Buffer is accessed out of bounds: local_buffer
+[tc05_memory_leak.cpp:7]: (error) Memory leak: buffer
+[tc06_use_after_free.cpp:12]: (error) Dereferencing 'hdr' after it is deallocated / freed
+[tc07_double_free.cpp:7]: (error) Memory pointed to by 'buffer' is freed twice
+[tc10_uninitialized_variable.cpp:10]: (warning) Uninitialized variable: is_safe

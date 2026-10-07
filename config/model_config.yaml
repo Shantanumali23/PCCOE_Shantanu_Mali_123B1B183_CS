@@ -1,0 +1,25 @@
+# ==============================================================================
+# CodeSecure AI — Model Configuration
+# Manages local LLM provider (Ollama) settings and generation hyperparameters.
+# ==============================================================================
+
+provider: ollama
+base_url: "http://localhost:11434"
+# Recommended local models: qwen2.5-coder:7b, qwen2.5-coder:1.5b, codellama:7b, deepseek-coder:6.7b
+model: "qwen2.5-coder:7b"
+fallback_model: "qwen2.5-coder:1.5b"
+
+# Inference parameters
+temperature: 0.1
+top_p: 0.95
+max_tokens: 2048
+timeout_seconds: 60
+
+# Prompt injection and safety
+enable_prompt_defense: true
+untrusted_data_boundary: true
+strict_json_mode: true
+
+# Offline / Demo Mock Reviewer Mode
+# When Ollama is unreachable, fall back gracefully to deterministic rule-grounded reviewer
+allow_offline_fallback: true

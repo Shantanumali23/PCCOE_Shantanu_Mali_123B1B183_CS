@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------------------------------
+  # FastAPI Backend Service
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codesecure-backend
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=CodeSecure AI
+      - APP_ENV=production
+      - DEBUG=false
+      - DATABASE_URL=sqlite:////app/codesecure.db
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen2.5-coder:7b
+      - CHROMA_PERSIST_DIRECTORY=/app/chroma_db
+    volumes:
+      - ./codesecure.db:/app/codesecure.db
+      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data
+      - ./evaluation/results:/app/evaluation/results
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------------------
+  # Streamlit UI Service
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codesecure-frontend
+    command: ["streamlit", "run", "frontend/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      - APP_NAME=CodeSecure AI
+      - DATABASE_URL=sqlite:////app/codesecure.db
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - CHROMA_PERSIST_DIRECTORY=/app/chroma_db
+    volumes:
+      - ./codesecure.db:/app/codesecure.db
+      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data
+      - ./evaluation/results:/app/evaluation/results
+    depends_on:
+      - backend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

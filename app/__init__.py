@@ -1,0 +1,1 @@
+"""CodeSecure AI application package."""

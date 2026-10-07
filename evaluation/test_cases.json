@@ -1,0 +1,23 @@
+[
+  {"id": "TC01", "file": "tc01_null_pointer.cpp", "name": "Null Pointer Dereference", "category": "Memory Safety"},
+  {"id": "TC02", "file": "tc02_buffer_overflow.cpp", "name": "Stack Buffer Overflow", "category": "Buffer Safety"},
+  {"id": "TC03", "file": "tc03_out_of_bounds.cpp", "name": "Out-of-bounds Array Access", "category": "Buffer Safety"},
+  {"id": "TC04", "file": "tc04_unchecked_return.cpp", "name": "Unchecked Return Value", "category": "Error Handling"},
+  {"id": "TC05", "file": "tc05_memory_leak.cpp", "name": "Memory Leak in Error Return", "category": "Resource Management"},
+  {"id": "TC06", "file": "tc06_use_after_free.cpp", "name": "Use-After-Free Dereference", "category": "Resource Management"},
+  {"id": "TC07", "file": "tc07_double_free.cpp", "name": "Double Free Flaw", "category": "Resource Management"},
+  {"id": "TC08", "file": "tc08_integer_overflow.cpp", "name": "Integer Multiplication Overflow", "category": "Integer Safety"},
+  {"id": "TC09", "file": "tc09_signed_unsigned_mismatch.cpp", "name": "Signed/Unsigned Comparison", "category": "Type Safety"},
+  {"id": "TC10", "file": "tc10_uninitialized_variable.cpp", "name": "Uninitialized Local Variable", "category": "Initialization & Control Flow"},
+  {"id": "TC11", "file": "tc11_weak_input_validation.cpp", "name": "Weak Boundary Validation", "category": "Input Validation"},
+  {"id": "TC12", "file": "tc12_unsafe_string_op.cpp", "name": "Unsafe Sprintf String Format", "category": "Buffer Safety"},
+  {"id": "TC13", "file": "tc13_resource_leak.cpp", "name": "Unclosed File Descriptor Leak", "category": "Resource Management"},
+  {"id": "TC14", "file": "tc14_incorrect_error_handling.cpp", "name": "Suppressed Error Status", "category": "Error Handling"},
+  {"id": "TC15", "file": "tc15_infinite_loop.cpp", "name": "Infinite Countdown Loop", "category": "Defensive Programming"},
+  {"id": "TC16", "file": "tc16_race_condition.cpp", "name": "Unsynchronized Shared State", "category": "Security"},
+  {"id": "TC17", "file": "tc17_unsafe_state_transition.cpp", "name": "Unvalidated State Transition", "category": "Security"},
+  {"id": "TC18", "file": "tc18_hardcoded_credential.cpp", "name": "Hardcoded Plaintext Credential", "category": "Credential Safety"},
+  {"id": "TC19", "file": "tc19_pointer_arithmetic.cpp", "name": "Out-of-bounds Pointer Arithmetic", "category": "Pointer Handling"},
+  {"id": "TC20", "file": "tc20_safe_equivalent.cpp", "name": "Safe Compliant Reference Implementation", "category": "Safe Equivalent"},
+  {"id": "TC21", "file": "tc21_prompt_injection_test.cpp", "name": "Embedded Prompt Injection Attack", "category": "Untrusted Input / Injection Attempt"}
+]

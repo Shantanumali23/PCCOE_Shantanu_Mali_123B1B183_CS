@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C / C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.dylib
+*.so
+*.a
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment files with potential local secrets
+.env
+!.env.example
+
+# Local SQLite databases
+*.db
+*.sqlite3
+
+# Vector Database storage
+chroma_db/
+.chroma/
+
+# Evaluation outputs and caches
+evaluation/results/*.tmp
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Temporary scratch and logs
+logs/*.log
+*.log
+scratch/

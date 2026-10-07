@@ -1,0 +1,20 @@
+# ==============================================================================
+# CodeSecure AI — Vector Store Configuration
+# Configures ChromaDB storage for RAG pipeline.
+# ==============================================================================
+
+provider: chromadb
+persist_directory: "./chroma_db"
+collection_name: "codesecure_kb"
+distance_metric: "cosine"
+
+# Search settings
+default_top_k: 4
+min_relevance_score: 0.25
+
+# Filtering categories
+allowed_categories:
+  - coding_guidelines
+  - misra_guidance
+  - security
+  - historical_findings

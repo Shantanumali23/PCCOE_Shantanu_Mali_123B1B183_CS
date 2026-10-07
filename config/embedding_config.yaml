@@ -1,0 +1,18 @@
+# ==============================================================================
+# CodeSecure AI — Embedding Configuration
+# Configures local embedding models for semantic code and guideline search.
+# ==============================================================================
+
+provider: sentence-transformers
+model_name: "sentence-transformers/all-MiniLM-L6-v2"
+dimension: 384
+batch_size: 32
+normalize_embeddings: true
+device: "cpu" # Set to 'cuda' or 'mps' if Apple Silicon / GPU available
+
+# Text chunking strategy for knowledge documents
+chunking:
+  chunk_size_tokens: 350
+  chunk_overlap_tokens: 50
+  separator: "\n\n"
+  include_headers: true
