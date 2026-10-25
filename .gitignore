@@ -46,4 +46,6 @@ htmlcov/
 # Temporary scratch and logs
 logs/*.log
 *.log
+*.ses
+:memory:*
 scratch/

@@ -1,3 +1,12 @@
-"""Code Review page entrypoint."""
+"""
+CodeSecure AI — Code Review Page Entrypoint
+"""
 import streamlit as st
-st.info("Please navigate to '🔍 Code Review' via the main sidebar.")
+
+st.set_page_config(page_title="CodeSecure AI — Code Review", layout="wide")
+
+try:
+    st.switch_page("streamlit_app.py")
+except Exception:
+    st.info("CodeSecure AI runs on a unified interactive platform.")
+    st.page_link("streamlit_app.py", label="Open CodeSecure AI Platform")
