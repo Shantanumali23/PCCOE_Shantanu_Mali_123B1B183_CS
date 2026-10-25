@@ -46,7 +46,7 @@ app = FastAPI(
     title=settings.APP_NAME,
     description=(
         "Privacy-Preserving Secure Code Debugging and Review using Local LLM and RAG. "
-        "Academic capstone project for Tata Technologies Tech Pulse FY-26 (CS4)."
+        "Enterprise-grade static analysis and grounded security triage for C/C++ codebases."
     ),
     version="1.0.0",
     lifespan=lifespan,
